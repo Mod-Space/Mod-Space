@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Membership
+icon: users
 permalink: /membership/
 ---
 

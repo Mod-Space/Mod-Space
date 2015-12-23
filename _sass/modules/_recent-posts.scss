@@ -1,0 +1,91 @@
+@mixin recent-post-columns($columns) {
+  width: (100% / 12) * $columns;
+}
+
+.recent-posts-wrapper {
+  background-color: white;
+  padding-top: 56px;
+  padding-bottom: 56px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.recent-posts {
+  $recent-post-border: 1px solid transparentize($base-font-color, 0.8); 
+  $recent-post-columns: 4;
+  $recent-post-big-columns: 8;
+  $recent-post-color: $base-font-color;
+  $recent-post-height: 8em;
+
+  @include clearfix;
+  position: relative;
+  &__header {
+    font-size: 1.5em;
+    @include media($tablet) {
+      font-size: 2.5em;
+    }
+  }
+  .recent-post {
+    @include transition (all 0.2s ease-in-out);
+    background: $base-background-color;
+    border-bottom: $recent-post-border;
+    border-right: $recent-post-border;
+    cursor: pointer;
+    float: left;
+    height: $recent-post-height;
+    overflow: hidden;
+    outline: none;
+    padding: 2em;
+    text-decoration: none;
+    width: 100%;
+    
+    @include media($tablet) {
+      @include recent-post-columns($recent-post-columns);
+      height: 2 * $recent-post-height;
+    }
+
+    &:focus,
+    &:hover {
+      background: transparentize(#333333, 0.99);
+    }
+  }
+
+  .recent-post img {
+      display: block;
+      height: 2.5em;
+      margin-bottom: 1.2em;
+      opacity: 0.2;
+    }
+
+  .recent-post h2 {
+      color: $recent-post-color;
+      margin-bottom: 0.4em;
+    }
+
+  .recent-post p {
+      color: transparentize($recent-post-color, 0.4);
+      line-height: 1.5em;
+    }
+
+  .recent-post-big {
+    @include media($tablet) {
+      @include recent-post-columns($recent-post-big-columns);
+    }
+  }
+  .recent-post .post-meta {
+    color: $blue;
+  }
+}
+
+#more-posts-link {
+  color: $blue;
+  padding: 2.2em;
+  display:inline-block;
+  // background-color: #333;
+  margin: 1.5em;
+  text-align: center;
+  :hover {
+    color: darken($blue, 10%);
+  }
+}
+

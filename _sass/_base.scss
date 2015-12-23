@@ -1,206 +1,148 @@
-/**
- * Reset some basic elements
- */
-body, h1, h2, h3, h4, h5, h6,
-p, blockquote, pre, hr,
-dl, dd, ol, ul, figure {
-    margin: 0;
-    padding: 0;
+@import "vendor/base/base";
+
+// colors
+$green: #B0FF0D;
+$blue: #0EC8DE;
+$dark-blue: #500CE8;
+$red: #FF0000;
+$orange: #E8980C;
+$beige: #f2f2da;
+
+//sizes
+$mobile-size:em(320);
+$tablet-size:720px;
+$desktop-size:em(960);
+$largedesktop-size:em(1050);
+
+// Bourbon Neat Breakpoints
+// You can use the media query mixin
+// i.e.   @include media($mobile) { font-size: 1.5em;; }
+$mobile: new-breakpoint(max-width 480px);
+$tablet: new-breakpoint(min-width $tablet-size 8);
+$desktop: new-breakpoint(min-width $desktop-size 12);
+$medium-screen: $desktop;
+$largedesktop: new-breakpoint(min-width $largedesktop-size 16);
+
+$sans-serif: 'Nunito', sans-serif;
+$sans-serif-2: 'Varela Round', sans-serif;
+
+
+
+hr {
+  border-bottom: 1px solid $light-gray;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  margin: $base-spacing 0;
 }
 
-
-
-/**
- * Basic styling
- */
-body {
-    font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
-    color: $text-color;
-    background-color: $background-color;
-    -webkit-text-size-adjust: 100%;
-    -webkit-font-feature-settings: "kern" 1;
-    -moz-font-feature-settings: "kern" 1;
-    -o-font-feature-settings: "kern" 1;
-    font-feature-settings: "kern" 1;
-    font-kerning: normal;
+p {
+  color: $base-font-color;
+  line-height: $base-line-height;
 }
 
-
-
-/**
- * Set `margin-bottom` to maintain vertical rhythm
- */
-h1, h2, h3, h4, h5, h6,
-p, blockquote, pre,
-ul, ol, dl, figure,
-%vertical-rhythm {
-    margin-bottom: $spacing-unit / 2;
-}
-
-
-
-/**
- * Images
- */
-img {
-    max-width: 100%;
-    vertical-align: middle;
-}
-
-
-
-/**
- * Figures
- */
-figure > img {
-    display: block;
-}
-
-figcaption {
-    font-size: $small-font-size;
-}
-
-
-
-/**
- * Lists
- */
-ul, ol {
-    margin-left: $spacing-unit;
-}
-
-li {
-    > ul,
-    > ol {
-         margin-bottom: 0;
-    }
-}
-
-
-
-/**
- * Headings
- */
-h1, h2, h3, h4, h5, h6 {
-    font-weight: $base-font-weight;
-}
-
-
-
-/**
- * Links
- */
 a {
-    color: $brand-color;
-    text-decoration: none;
-
-    &:visited {
-        color: darken($brand-color, 15%);
-    }
-
-    &:hover {
-        color: $text-color;
-        text-decoration: underline;
-    }
+  color: $action-color;
+  text-decoration: none;
 }
 
-
-
-/**
- * Blockquotes
- */
-blockquote {
-    color: $grey-color;
-    border-left: 4px solid $grey-color-light;
-    padding-left: $spacing-unit / 2;
-    font-size: 18px;
-    letter-spacing: -1px;
-    font-style: italic;
-
-    > :last-child {
-        margin-bottom: 0;
-    }
+.type {
+  border-bottom: 1px solid;
+  display: inline-block;
+  font-family: $sans-serif;
+  font-size: 0.7em;
+  font-weight: 800;
+  margin-bottom: 2em;
+  padding: 0.3em 0;
+  text-align: left;
+  text-transform: uppercase;
 }
 
+h1 {
+  font-family: $sans-serif-2;
+  font-size: 1.8em;
+  margin-bottom: 0.5em;
 
+  @include media($medium-screen) {
+    font-size: 2.4em;
+  }
+}
 
-/**
- * Code formatting
- */
-pre,
-code {
-    font-size: 15px;
-    border: 1px solid $grey-color-light;
-    border-radius: 3px;
-    background-color: #eef;
+h2 {
+  font-family: $sans-serif-2;
+  font-size: 1.0em;
+  font-weight: 400;
+  line-height: 1.4em;
+  margin-bottom: 0.9em;
+
+  @include media($medium-screen) {
+    font-size: 1.4em;
+  }
 }
 
 code {
-    padding: 1px 5px;
-}
-
-pre {
-    padding: 8px 12px;
-    overflow-x: auto;
-
-    > code {
-        border: 0;
-        padding-right: 0;
-        padding-left: 0;
-    }
+  background: #F7F7F7;
+  border-radius: $base-border-radius * 1.5;
+  border: 1px solid #E0E0E0;
+  font-family: monaco;
+  font-size: 0.7em;
+  font-style: normal;
+  padding: 0.1em 0.4em;
+  white-space: nowrap;
 }
 
 
-
-/**
- * Wrapper
- */
-.wrapper {
-    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
-    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
-    margin-right: auto;
-    margin-left: auto;
-    padding-right: $spacing-unit;
-    padding-left: $spacing-unit;
-    @extend %clearfix;
-
-    @include media-query($on-laptop) {
-        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
-        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
-        padding-right: $spacing-unit / 2;
-        padding-left: $spacing-unit / 2;
-    }
+h3 {
+  font-family: $sans-serif-2;
+  font-size: 1.2em;
+  font-weight: 400;
+  line-height: 1.3em;
+  margin-bottom: 0.4em;
 }
 
-
-
-/**
- * Clearfix
- */
-%clearfix {
-
-    &:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
+p.date {
+  color: transparentize($base-font-color, 0.6);
+  font-family: $sans-serif;
+  font-size: 0.9em;
+  margin-bottom: 0.3em;
 }
 
+p {
+  font-family: $sans-serif;
+  font-size: 1.05em;
+  font-weight: 300;
+  line-height: 1.4em;
+  margin-bottom: 1.5em;
 
-
-/**
- * Icons
- */
-.icon {
-
-    > svg {
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        vertical-align: middle;
-
-        path {
-            fill: $grey-color;
-        }
-    }
+  span {
+    font-family: $sans-serif-2;
+    font-size: 0.8em;
+    text-transform: uppercase;
+  }
 }
+
+a.read-more {
+  display: inline-block;
+  font-family: $sans-serif-2;
+  font-size: 0.8em;
+  font-weight: 700;
+  margin-left: 0.2em;
+  position: relative;
+  text-transform: uppercase;
+
+  span {
+    font-size: 1.5em;
+    position: absolute;
+    right: -12px;
+    top: -1px;
+  }
+}
+
+hr {
+  width: 3em;
+}
+
+p.author {
+  font-family: $sans-serif;
+}
+

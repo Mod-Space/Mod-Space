@@ -1,0 +1,21 @@
+<div class="info-block">
+  <h2>
+    <i class="fa fa-rocket fa-2x"></i>
+    Companies &amp Consultants
+  </h2>
+  <p>
+    We are a group of skilled Programmers, Website
+    Builders, Technical Marketers, Writers, and Digital Artists 
+    pushing the envelope of technology. 
+  </p>
+</div>
+
+<div class="companies">
+  {% for company in site.data.companies %}
+    <a class="companies__link" href="{{ company.url | prepend: site.baseurl }}">
+        {{ company.name }}
+    </a>
+  {% endfor %}
+</div>
+
+

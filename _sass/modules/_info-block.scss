@@ -1,0 +1,24 @@
+.info-block {
+  @include texture(180deg, $beige, $beige, 56, 0); 
+  padding-top: 4.5em;
+  padding-bottom: 3.5em;
+  text-align: center;
+  h2 {
+    text-transform: uppercase;
+    display: inline-block;
+    width: 70%;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid $blue;
+    @include media($tablet) {
+      font-size: 2.5em;
+    }
+  }
+  p {
+    display: inline-block;
+    width: 70%;
+    @include media($tablet) {
+      font-size: 1.5em;
+      width: 50%;
+    }
+  }
+}

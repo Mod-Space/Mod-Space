@@ -1,6 +1,7 @@
 ---
 layout: page
 title: About
+icon: fort-awesome
 permalink: /about/
 ---
 

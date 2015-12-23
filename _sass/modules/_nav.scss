@@ -1,0 +1,41 @@
+@mixin nav-columns($columns) {
+  width: (100% / 12) * $columns;
+}
+
+
+.nav {
+  $nav-background: white;
+  $nav-color: rgba(12,13,13,0.7);
+  $nav-link-color: transparentize($nav-color, 0);
+
+  background-color: $nav-background;
+  padding: $base-spacing;
+  border-top: 3px solid white;
+
+  &__links {
+    @include span-columns(3);
+    margin: 0 0 1em 0;
+    padding: 0;
+    text-align: center;  
+    text-transform: uppercase;
+  }
+
+  &__links a {
+    color: $nav-link-color;
+    text-decoration: none;
+    font-size: 0.5em;
+    &:focus,
+    &:hover {
+      color: transparentize($nav-color, 0.2);
+    }
+    @include media($tablet) {
+      font-size: 1.0em;
+    }
+  }
+
+  &__links a i {
+    font-size: 4.0em;
+    display: block;
+  }
+}
+

@@ -1,0 +1,26 @@
+<div class="recent-posts-wrapper">
+  <div class="recent-posts">
+    <h2 class="recent-posts__header">
+      <i class="fa fa-newspaper-o fa-large">Recent Articles</i>
+    </h2>
+
+      {% for post in site.posts limit: 3%}
+        <a class="recent-post" href="{{ post.url | prepend: site.baseurl }}">
+          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+          <h2>
+            {{ post.title }}
+          </h2>
+        </a>
+      {% endfor %}
+  </div>
+
+  <a id="more-posts-link" href="#">
+    More
+    <br>
+    <i class="fa fa-angle-double-down fa-3x"></i>
+  </a>
+</div>
+
+
+
+
