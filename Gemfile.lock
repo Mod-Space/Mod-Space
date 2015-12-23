@@ -137,5 +137,4 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  github-pages (= 40)
-  json
+  github-pages
