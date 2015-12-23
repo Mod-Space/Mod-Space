@@ -2,20 +2,29 @@
 - name: Nathan Bunney
   email: geektech2000@gmail.com 
   web: http://inventaweb.net
+  description:
+    Nathan has been actively programming since 1984 and he has worn out 
+    several keyboards doing so. He earned his B.S. in computer science from 
+    C.S.U. Sacramento in 1994 where he specialized in designing operating 
+    systems and compilers. Since then he has worked as a corporate instructor, 
+    Oracle database administrator, and for the last 12 years as a website 
+    programmer.
 
-- name: James Moore
-  email: 
-  web: http://knowthen.com
+    Nathan owns Inventaweb.net which specializes in building custom web 
+    solutions for their clients. From custom ecommerce solutions to gamified 
+    sites or data management solutions Inventaweb is able to tackle your 
+    toughest problems and bring process improvement to most projects. Using the 
+    latest technology such as AngularJS to build single page applications and 
+    Slim Framework to create custom APIs nothing is out of reach.
 
-- name: Scott Smith
-  email:
-  web: http://scottksmith.com
+- name: Peter Lejeck
+  email: me@plejeck.com
+  web: http://plejeck.com
+  description:
 
 - name: Logan Rice
-  email:
-  web: http://scottksmith.com
-    
-- name: Peter
-  email:
-  web: http://scottksmith.com
+  email: loganrice.io
+  web: http://loganrice.io
+  description:
+
 
